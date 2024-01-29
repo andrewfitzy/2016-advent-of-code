@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Stash unstaged files
+git stash -q --keep-index
+
+echo "spotlessApply..."
+./gradlew spotlessApply
+
+status=$?
+
+if [ "$status" != 0 ] ; then
+    git stash pop -q
+    exit 1
+fi
+
+echo "detekt..."
+./gradlew detekt
+
+status=$?
+
+if [ "$status" != 0 ] ; then
+    git stash pop -q
+    exit 1
+fi
+
+git stash pop -q
+exit 0
