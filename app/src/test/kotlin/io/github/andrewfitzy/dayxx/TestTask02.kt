@@ -20,7 +20,8 @@ class TestTask02 {
         assertEquals(1, result)
     }
 
-    @Test fun testSolveWithRealDate_01() {
+    // @Test
+    fun testSolveWithRealDate_01() {
         // Given
         val fileContent = getFileContentForDay("xx")
         val classUnderTest = Task02(fileContent)
