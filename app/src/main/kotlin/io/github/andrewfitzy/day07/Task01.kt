@@ -27,7 +27,7 @@ class Task01(puzzleInput: List<String>) {
         return count
     }
 
-    @Suppress("MagicNumber") //I feel this is better than a constant called THREE
+    @Suppress("MagicNumber") // I feel this is better than a constant called THREE
     private fun containsPalindromeSequence(split: String): Boolean {
         for (i in 3 until split.length) {
             if (split[i] == split[i - 3] && split[i - 1] == split[i - 2] && split[i] != split[i - 1]) {
