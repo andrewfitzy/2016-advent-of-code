@@ -11,7 +11,7 @@ class Task01(rowsInput: Int, colsInput: Int, puzzleInput: List<String>) {
             if (line.startsWith("rect")) {
                 // rect AxB
                 val rectangle = line.split(" ")[1]
-                val width = rectangle.split("sx")[0].toInt()
+                val width = rectangle.split("x")[0].toInt()
                 val height = rectangle.split("x")[1].toInt()
                 illuminate(width, height, display)
             }

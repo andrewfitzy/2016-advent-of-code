@@ -1,5 +1,5 @@
 
-package io.github.andrewfitzy.day03
+package io.github.andrewfitzy.day10
 
 import getFileContentForDay
 import kotlin.test.Test
@@ -10,12 +10,12 @@ class TestTask02 {
         // Given
         val fileContent =
             listOf(
-                "101 301 501",
-                "102 302 502",
-                "103 303 503",
-                "201 401 601",
-                "202 402 602",
-                "203 403 603",
+                "value 5 goes to bot 2",
+                "bot 2 gives low to bot 1 and high to bot 0",
+                "value 3 goes to bot 1",
+                "bot 1 gives low to output 1 and high to bot 0",
+                "bot 0 gives low to output 2 and high to output 0",
+                "value 2 goes to bot 2",
             )
         val classUnderTest = Task02(fileContent)
 
@@ -23,19 +23,19 @@ class TestTask02 {
         val result = classUnderTest.solve()
 
         // Then
-        assertEquals(6, result)
+        assertEquals(30, result)
     }
 
     // @Test
     fun testSolveWithRealDate_01() {
         // Given
-        val fileContent = getFileContentForDay("03")
+        val fileContent = getFileContentForDay("10")
         val classUnderTest = Task02(fileContent)
 
         // When
         val result = classUnderTest.solve()
 
         // Then
-        assertEquals(1577, result)
+        assertEquals(12803, result)
     }
 }
