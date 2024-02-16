@@ -8,14 +8,15 @@ import kotlin.test.assertEquals
 class TestTask02 {
     @Test fun testSolveWithDemoDate_01() {
         // Given
-        val fileContent = listOf(
-            "cpy 41 a",
-            "inc a",
-            "inc a",
-            "dec a",
-            "jnz a 2",
-            "dec a",
-        )
+        val fileContent =
+            listOf(
+                "cpy 41 a",
+                "inc a",
+                "inc a",
+                "dec a",
+                "jnz a 2",
+                "dec a",
+            )
         val classUnderTest = Task02(fileContent)
 
         // When
