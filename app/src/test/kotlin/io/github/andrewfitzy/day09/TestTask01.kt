@@ -6,7 +6,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class TestTask01 {
-    @Test fun testSolveWithDemoDate_01() {
+    @Test fun testSolveWithDemoData_01() {
         // Given
         val fileContent = listOf("ADVENT")
         val classUnderTest = Task01(fileContent)
@@ -18,7 +18,7 @@ class TestTask01 {
         assertEquals(6, result)
     }
 
-    @Test fun testSolveWithDemoDate_02() {
+    @Test fun testSolveWithDemoData_02() {
         // Given
         val fileContent = listOf("A(1x5)BC")
         val classUnderTest = Task01(fileContent)
@@ -30,7 +30,7 @@ class TestTask01 {
         assertEquals(7, result)
     }
 
-    @Test fun testSolveWithDemoDate_03() {
+    @Test fun testSolveWithDemoData_03() {
         // Given
         val fileContent = listOf("(3x3)XYZ")
         val classUnderTest = Task01(fileContent)
@@ -42,7 +42,7 @@ class TestTask01 {
         assertEquals(9, result)
     }
 
-    @Test fun testSolveWithDemoDate_04() {
+    @Test fun testSolveWithDemoData_04() {
         // Given
         val fileContent = listOf("A(2x2)BCD(2x2)EFG")
         val classUnderTest = Task01(fileContent)
@@ -54,7 +54,7 @@ class TestTask01 {
         assertEquals(11, result)
     }
 
-    @Test fun testSolveWithDemoDate_05() {
+    @Test fun testSolveWithDemoData_05() {
         // Given
         val fileContent = listOf("(6x1)(1x3)A")
         val classUnderTest = Task01(fileContent)
@@ -66,7 +66,7 @@ class TestTask01 {
         assertEquals(6, result)
     }
 
-    @Test fun testSolveWithDemoDate_06() {
+    @Test fun testSolveWithDemoData_06() {
         // Given
         val fileContent = listOf("X(8x2)(3x3)ABCY")
         val classUnderTest = Task01(fileContent)

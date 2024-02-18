@@ -6,7 +6,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class TestTask02 {
-    @Test fun testSolveWithDemoDate_01() {
+    @Test fun testSolveWithDemoData_01() {
         // Given
         val fileContent = listOf("(3x3)XYZ")
         val classUnderTest = Task02(fileContent)
@@ -18,7 +18,7 @@ class TestTask02 {
         assertEquals(9L, result)
     }
 
-    @Test fun testSolveWithDemoDate_02() {
+    @Test fun testSolveWithDemoData_02() {
         // Given
         val fileContent = listOf("X(8x2)(3x3)ABCY")
         val classUnderTest = Task02(fileContent)
@@ -30,7 +30,7 @@ class TestTask02 {
         assertEquals(20L, result)
     }
 
-    @Test fun testSolveWithDemoDate_03() {
+    @Test fun testSolveWithDemoData_03() {
         // Given
         val fileContent = listOf("(27x12)(20x12)(13x14)(7x10)(1x12)A")
         val classUnderTest = Task02(fileContent)
@@ -42,7 +42,7 @@ class TestTask02 {
         assertEquals(241920L, result)
     }
 
-    @Test fun testSolveWithDemoDate_04() {
+    @Test fun testSolveWithDemoData_04() {
         // Given
         val fileContent = listOf("(25x3)(3x3)ABC(2x3)XY(5x2)PQRSTX(18x9)(3x2)TWO(5x7)SEVEN")
         val classUnderTest = Task02(fileContent)

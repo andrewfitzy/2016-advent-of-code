@@ -33,7 +33,7 @@ detekt {
     toolVersion = "1.23.3"
 }
 
-tasks.named<Test>("test") {
+val test = tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 

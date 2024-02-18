@@ -6,7 +6,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class TestTask02 {
-    @Test fun testSolveWithDemoDate_01() {
+    @Test fun testSolveWithDemoData_01() {
         // Given
         val fileContent = listOf("abc")
         val classUnderTest = Task02(fileContent)
