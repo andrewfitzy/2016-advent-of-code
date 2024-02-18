@@ -1,5 +1,6 @@
 package io.github.andrewfitzy.day14
 
+import io.github.andrewfitzy.util.appendAll
 import io.github.andrewfitzy.util.md5
 
 private const val MAX_RANGE = 1000
@@ -58,7 +59,7 @@ class Task02(puzzleInput: List<String>) {
     ): MutableSet<Int> {
         val matchingTriples = mutableSetOf<Int>()
         val tmpTriple = StringBuilder()
-        tmpTriple.append(quint[0]).append(quint[0]).append(quint[0])
+        tmpTriple.appendAll(quint[0], quint[0], quint[0])
         val indexes = tracking.getOrDefault(tmpTriple.toString(), mutableListOf())
         for (index in indexes) {
             val range = currentIndex - MAX_RANGE

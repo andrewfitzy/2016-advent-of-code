@@ -1,5 +1,7 @@
 package io.github.andrewfitzy.day07
 
+import io.github.andrewfitzy.util.appendAll
+
 class Task02(puzzleInput: List<String>) {
     private val input: List<String> = puzzleInput
 
@@ -37,7 +39,7 @@ class Task02(puzzleInput: List<String>) {
 
     private fun getBABToABA(bab: String): String {
         val builder = StringBuilder()
-        builder.append(bab[1]).append(bab[0]).append(bab[1])
+        builder.appendAll(bab[1], bab[0], bab[1])
         return builder.toString()
     }
 
@@ -46,7 +48,7 @@ class Task02(puzzleInput: List<String>) {
         for (i in 2 until value.length) {
             if (value[i] == value[i - 2] && value[i] != value[i - 1]) {
                 var builder = StringBuilder()
-                builder.append(value[i - 2]).append(value[i - 1]).append(value[i])
+                builder.appendAll(value[i - 2], value[i - 1], value[i])
                 tlps.add(builder.toString())
             }
         }
