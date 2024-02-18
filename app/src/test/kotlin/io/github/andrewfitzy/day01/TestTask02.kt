@@ -2,7 +2,6 @@
 package io.github.andrewfitzy.day01
 
 import getFileContentForDay
-import org.junit.jupiter.api.Tag
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
