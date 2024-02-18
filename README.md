@@ -1,13 +1,13 @@
-![example workflow](https://github.com/andrewfitzy/2016-advent-of-code/actions/workflows/build_and_test.yml/badge.svg)
+![build_and_test badge](https://github.com/andrewfitzy/2016-advent-of-code/actions/workflows/build_and_test.yml/badge.svg)
 # 2016-advent-of-code
 
-This repo contains the solutions for my path of Advent of Code 2016. I complete AoC to get familiar with a technology, its build tools and testing tools, it's kind of a mini-production type workflow I follow.
+This repo contains the solutions for my path of [Advent of Code 2016](https://adventofcode.com/2016). I complete AoC to get familiar with a technology, its build tools and testing tools, it's kind of a mini-production type workflow I follow.
 
 In this year I chose to use the following tools:
-- [Kotlin v1.9.20](https://kotlinlang.org/docs/whatsnew1920.html). Build tools for this year's language of choice.
-- [Gradle v8.1.1](https://docs.gradle.org/8.1.1/release-notes.html). From April 2023 which is when I set up this repo.
+- [Kotlin v1.9.20](https://kotlinlang.org/docs/whatsnew1920.html). Language for this years AOC.
+- [Gradle v8.1.1](https://docs.gradle.org/8.1.1/release-notes.html). Build tool for Kotlin projects.
 - [Spotless v6.25.0](https://github.com/diffplug/spotless/releases/tag/gradle%2F6.25.0). Also using the Ktlint formatting configuration [v1.1.1](https://github.com/pinterest/ktlint/releases/tag/1.1.1).
-- [Detekt v1.23.3](). Code analysis tool which is useful for finding bugs.
+- [Detekt v1.23.3](https://detekt.dev/docs/intro). Code analysis tool which is useful for finding bugs.
 - [Kotlin JUnit](https://kotlinlang.org/api/latest/kotlin.test/). Unit test framework with a Kotlin flavour.
 
 All development was completed using IntelliJ which is an awesome development environment.
