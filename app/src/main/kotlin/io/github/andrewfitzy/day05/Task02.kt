@@ -1,6 +1,6 @@
 package io.github.andrewfitzy.day05
 
-import java.security.MessageDigest
+import io.github.andrewfitzy.util.md5
 
 private const val PASSWORD_LENGTH = 8
 
@@ -16,7 +16,8 @@ class Task02(puzzleInput: List<String>) {
         val positionMap: HashMap<Int, String> = HashMap()
         var index = 0
         while (positionMap.size != PASSWORD_LENGTH) {
-            val md5Hash = md5(key + index)
+            val testString = key + index
+            val md5Hash = testString.md5()
             index++
 
             if (!md5Hash.startsWith("00000")) {
@@ -36,11 +37,5 @@ class Task02(puzzleInput: List<String>) {
         }
 
         return builder.toString()
-    }
-
-    private fun md5(input: String): String {
-        val md = MessageDigest.getInstance("MD5")
-        val digest = md.digest(input.toByteArray())
-        return digest.joinToString("") { "%02x".format(it) }
     }
 }
