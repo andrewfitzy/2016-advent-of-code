@@ -12,7 +12,7 @@ class Task02(puzzleInput: List<String>) {
         var runningTotal = countSafeTiles(currentRow)
         var count = 0
         val numberOfIterations = numberOfRows - 1
-        while(count < numberOfIterations) {
+        while (count < numberOfIterations) {
             val rowBuilder = StringBuilder()
             for (j in currentRow.indices) {
                 val testString = StringBuilder()
