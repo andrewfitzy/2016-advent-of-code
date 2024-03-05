@@ -8,7 +8,7 @@ class Task02(puzzleInput: List<String>) {
 
     fun solve(diskSize: Int): String {
         var a: String = input[0]
-        while(a.length < diskSize) {
+        while (a.length < diskSize) {
             val b = getB(a)
             a = a + "0" + b
         }
@@ -20,9 +20,9 @@ class Task02(puzzleInput: List<String>) {
     private fun getChecksum(diskData: String): String {
         var checksumData = diskData.toList()
         var checksumBuilder = StringBuilder()
-        while(checksumBuilder.length % 2 == 0) {
+        while (checksumBuilder.length % 2 == 0) {
             checksumBuilder = StringBuilder()
-            for (i in 1 .. checksumData.size step 2) {
+            for (i in 1..checksumData.size step 2) {
                 if (checksumData[i] == checksumData[i - 1]) {
                     checksumBuilder.append("1")
                 } else {
