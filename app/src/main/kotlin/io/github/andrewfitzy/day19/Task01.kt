@@ -35,7 +35,7 @@ class Task01(puzzleInput: List<String>) {
                 break
             }
         }
-        if(nextElf > -1) {
+        if (nextElf > -1) {
             return nextElf
         }
         for (elf in 1..<currentElf) {
