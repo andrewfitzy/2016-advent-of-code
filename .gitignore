@@ -33,4 +33,4 @@ replay_pid*
 build
 
 # Ignore any test input files in resources
-/app/src/test/resources/*/task01_input.txt
+/app/src/test/resources/*/task*_input.txt
