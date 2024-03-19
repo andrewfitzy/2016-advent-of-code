@@ -44,10 +44,10 @@ class Task02(puzzleInput: List<String>) {
     }
 
     private fun getThreeLetterPalindromes(value: String): Set<String> {
-        var tlps: MutableSet<String> = mutableSetOf()
+        val tlps: MutableSet<String> = mutableSetOf()
         for (i in 2 until value.length) {
             if (value[i] == value[i - 2] && value[i] != value[i - 1]) {
-                var builder = StringBuilder()
+                val builder = StringBuilder()
                 builder.appendAll(value[i - 2], value[i - 1], value[i])
                 tlps.add(builder.toString())
             }

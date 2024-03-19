@@ -14,7 +14,7 @@ class Task01(puzzleInput: List<String>) {
                 if (elfMap.contains(elf)) {
                     val nextElf = getNextElf(elf, numberOfElves, elfMap)
                     val value = elfMap.remove(nextElf)
-                    val newVal = value?.plus(elfMap.get(elf)!!)
+                    val newVal = value?.plus(elfMap[elf]!!)
                     elfMap[elf] = newVal!!
                 }
             }
