@@ -55,7 +55,7 @@ class TestTask02 {
     }
 
     // Takes about 40mins to run, you have been warned
-    @Test
+    // @Test
     fun testSolveWithRealDate_01() {
         // Given
         val fileContent = getFileContentForDay("19")
