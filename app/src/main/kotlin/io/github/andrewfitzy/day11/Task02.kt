@@ -8,7 +8,7 @@ private const val FLOOR_FOUR = 4
 private const val GENERATOR = "generator"
 private const val MICROCHIP = "microchip"
 
-class Task01(puzzleInput: List<String>) {
+class Task02(puzzleInput: List<String>) {
     private val input: List<String> = puzzleInput
 
     fun solve(): Int {
@@ -18,7 +18,19 @@ class Task01(puzzleInput: List<String>) {
         var floorCount = 1
         for (floor in input) {
             val matches = inputRegex.findAll(floor).map { it.groupValues[1] }.toList()
-            stateMap[floorCount] = matches.toSet()
+            if (floorCount == FLOOR_ONE) {
+                val floorOne =
+                    mutableListOf(
+                        "elerium generator",
+                        "elerium-compatible microchip",
+                        "dilithium generator",
+                        "dilithium-compatible microchip",
+                    )
+                floorOne.addAll(matches)
+                stateMap[floorCount] = floorOne.toSet()
+            } else {
+                stateMap[floorCount] = matches.toSet()
+            }
             floorCount++
         }
         val state =
@@ -38,7 +50,7 @@ class Task01(puzzleInput: List<String>) {
         val deque = ArrayDeque<Step>()
         val start = Step(0, stateMap)
         deque.add(start)
-        val seen = mutableSetOf<State>()
+        val seen = mutableSetOf<Map<String, Int>>()
         while (!deque.isEmpty()) {
             val step = deque.removeFirst()
             if (step.state.isFinished()) {
@@ -47,10 +59,12 @@ class Task01(puzzleInput: List<String>) {
 
             val availableMoves = getAvailableMoves(step.state)
             for (move in availableMoves) {
-                if (seen.contains(move)) {
+                val encodedMove = encodeMove(move)
+
+                if (seen.contains(encodedMove)) {
                     continue
                 }
-                seen.add(move)
+                seen.add(encodedMove)
 
                 val tmpStep = Step(step.cost + 1, move)
                 deque.add(tmpStep)
@@ -58,6 +72,20 @@ class Task01(puzzleInput: List<String>) {
         }
 
         error("We should have found an end state")
+    }
+
+    private fun encodeMove(move: State): Map<String, Int> {
+        val encodedMove = mutableMapOf<String, Int>()
+        encodedMove["elevator"] = move.elevator
+        encodedMove["floor_01_generator"] = move.floorOne.filter { it.endsWith(GENERATOR) }.size
+        encodedMove["floor_01_microchip"] = move.floorOne.filter { it.endsWith(MICROCHIP) }.size
+        encodedMove["floor_02_generator"] = move.floorTwo.filter { it.endsWith(GENERATOR) }.size
+        encodedMove["floor_02_microchip"] = move.floorTwo.filter { it.endsWith(MICROCHIP) }.size
+        encodedMove["floor_03_generator"] = move.floorThree.filter { it.endsWith(GENERATOR) }.size
+        encodedMove["floor_03_microchip"] = move.floorThree.filter { it.endsWith(MICROCHIP) }.size
+        encodedMove["floor_04_generator"] = move.floorFour.filter { it.endsWith(GENERATOR) }.size
+        encodedMove["floor_04_microchip"] = move.floorFour.filter { it.endsWith(MICROCHIP) }.size
+        return encodedMove
     }
 
     private fun getAvailableMoves(state: State): List<State> {
@@ -130,7 +158,7 @@ class Task01(puzzleInput: List<String>) {
     @Suppress("NestedBlockDepth", "CyclomaticComplexMethod")
     private fun buildMovementCombinations(currentFloor: List<String>): MutableList<MutableList<String>> {
         // get possible movement combos
-        val movementCombinations = mutableListOf<MutableList<String>>()
+        var movementCombinations = mutableListOf<MutableList<String>>()
 
         // 1. We can move individual items
         for (item in currentFloor) {
