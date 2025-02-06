@@ -2,7 +2,7 @@
 plugins {
     alias(libs.plugins.jvm)
     application
-    id("io.gitlab.arturbosch.detekt") version("1.23.3")
+    id("io.gitlab.arturbosch.detekt") version("1.23.7")
     id("com.diffplug.spotless") version "6.25.0"
 }
 
@@ -14,7 +14,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation(libs.junit.jupiter.engine)
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.3")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.7")
 }
 
 java {
@@ -30,7 +30,7 @@ spotless {
 }
 
 detekt {
-    toolVersion = "1.23.3"
+    toolVersion = "1.23.7"
 }
 
 val test = tasks.named<Test>("test") {
